@@ -41,7 +41,7 @@ final class Renderer implements PluginInterface, EventSubscriberInterface
         $messages = $this->composer->getPackage()->getExtra()['endroid']['message'] ?? [];
 
         foreach ($messages as $message) {
-            $this->io->write('<'.message['type'].'>'.$message['content'].'</>');
+            $this->io->write('<'.$message['type'].'>'.$message['content'].'</>');
         }
     }
 }
