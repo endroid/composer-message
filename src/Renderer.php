@@ -19,7 +19,10 @@ use Composer\Script\ScriptEvents;
 
 final class Renderer implements PluginInterface, EventSubscriberInterface
 {
+    /** @var Composer */
     private $composer;
+
+    /** @var IOInterface */
     private $io;
 
     public function activate(Composer $composer, IOInterface $io): void
