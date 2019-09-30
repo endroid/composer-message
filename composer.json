@@ -1,0 +1,30 @@
+{
+    "name": "endroid/composer-message",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeroen van den Enden",
+            "email": "info@endroid.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "composer-plugin-api": "^1.1"
+    },
+    "require-dev": {
+        "composer/composer": "^1.8",
+        "endroid/test": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Endroid\\ComposerMessage\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "class": "Endroid\\ComposerMessage\\Renderer"
+    }
+}
