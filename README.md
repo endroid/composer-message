@@ -24,12 +24,17 @@ Define the messages inside your composer.json like this.
 "extra": {
     "endroid": {
         "message": [
-            { "content": "This is a warning", "type": "warning" },
-            { "content": "This is some info", "type": "info" }
+            { "content": "This is an error message", "type": "error" },
+            { "content": "This is a warning message", "type": "warning" },
+            { "content": "This is an info message", "type": "info" }
         ]
     }
 }
 ```
+
+This will generate the following console output during installation.
+
+![Composer Message Output](composer_message_output.png)
 
 ## Versioning
 
