@@ -3,7 +3,7 @@
 *By [endroid](https://endroid.nl/)*
 
 [![Latest Stable Version](http://img.shields.io/packagist/v/endroid/composer-message.svg)](https://packagist.org/packages/endroid/composer-message)
-[![Build Status](http://img.shields.io/travis/endroid/composer-message.svg)](http://travis-ci.org/endroid/composer-message)
+[![Build Status](https://github.com/endroid/composer-message/workflows/CI/badge.svg)](https://github.com/endroid/composer-message/actions)
 [![Total Downloads](http://img.shields.io/packagist/dt/endroid/composer-message.svg)](https://packagist.org/packages/endroid/composer-message)
 [![Monthly Downloads](http://img.shields.io/packagist/dm/endroid/composer-message.svg)](https://packagist.org/packages/endroid/composer-message)
 [![License](http://img.shields.io/packagist/l/endroid/composer-message.svg)](https://packagist.org/packages/endroid/composer-message)
