@@ -14,7 +14,11 @@
     },
     "require-dev": {
         "composer/composer": "^1.8",
-        "endroid/test": "dev-master"
+        "endroid/quality": "dev-master"
+    },
+    "suggest": {
+        "roave/security-advisories": "Avoids installation of package versions with vulnerabilities",
+        "symfony/security-checker": "Checks your composer.lock for vulnerabilities"
     },
     "autoload": {
         "psr-4": {
