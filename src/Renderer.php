@@ -31,6 +31,14 @@ final class Renderer implements PluginInterface, EventSubscriberInterface
         $this->io = $io;
     }
 
+    public function deactivate(Composer $composer, IOInterface $io): void
+    {
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io): void
+    {
+    }
+
     public static function getSubscribedEvents(): array
     {
         return [
