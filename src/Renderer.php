@@ -2,13 +2,6 @@
 
 declare(strict_types=1);
 
-/*
- * (c) Jeroen van den Enden <info@endroid.nl>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace Endroid\ComposerMessage;
 
 use Composer\Composer;
@@ -19,11 +12,8 @@ use Composer\Script\ScriptEvents;
 
 final class Renderer implements PluginInterface, EventSubscriberInterface
 {
-    /** @var Composer */
-    private $composer;
-
-    /** @var IOInterface */
-    private $io;
+    private Composer $composer;
+    private IOInterface $io;
 
     public function activate(Composer $composer, IOInterface $io): void
     {
@@ -39,6 +29,7 @@ final class Renderer implements PluginInterface, EventSubscriberInterface
     {
     }
 
+    /** @return array<string, array<mixed>> */
     public static function getSubscribedEvents(): array
     {
         return [
