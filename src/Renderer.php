@@ -12,11 +12,8 @@ use Composer\Script\ScriptEvents;
 
 final class Renderer implements PluginInterface, EventSubscriberInterface
 {
-    /** @var Composer */
-    private $composer;
-
-    /** @var IOInterface */
-    private $io;
+    private Composer $composer;
+    private IOInterface $io;
 
     public function activate(Composer $composer, IOInterface $io): void
     {
@@ -32,7 +29,6 @@ final class Renderer implements PluginInterface, EventSubscriberInterface
     {
     }
 
-    /** @return array<string, array<mixed>> */
     public static function getSubscribedEvents(): array
     {
         return [
