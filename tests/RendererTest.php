@@ -6,9 +6,9 @@ namespace Endroid\ComposerMessage\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-class RendererTest extends TestCase
+final class RendererTest extends TestCase
 {
-    public function testNoTestsYet()
+    public function testNoTestsYet(): void
     {
         $this->assertTrue(true);
     }
