@@ -9,26 +9,27 @@ use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\ScriptEvents;
+use Override;
 
 final class Renderer implements PluginInterface, EventSubscriberInterface
 {
     private Composer $composer;
     private IOInterface $io;
 
+    #[Override]
     public function activate(Composer $composer, IOInterface $io): void
     {
         $this->composer = $composer;
         $this->io = $io;
     }
 
-    public function deactivate(Composer $composer, IOInterface $io): void
-    {
-    }
+    #[Override]
+    public function deactivate(Composer $composer, IOInterface $io): void {}
 
-    public function uninstall(Composer $composer, IOInterface $io): void
-    {
-    }
+    #[Override]
+    public function uninstall(Composer $composer, IOInterface $io): void {}
 
+    #[Override]
     public static function getSubscribedEvents(): array
     {
         return [
@@ -39,10 +40,15 @@ final class Renderer implements PluginInterface, EventSubscriberInterface
 
     public function install(): void
     {
-        $messages = $this->composer->getPackage()->getExtra()['endroid']['message'] ?? [];
+        $extra = $this->composer->getPackage()->getExtra();
+
+        /** @var array{message?: array<array{type: string, content: string}>}|null $endroid */
+        $endroid = $extra['endroid'] ?? null;
+
+        $messages = is_array($endroid) && is_array($endroid['message'] ?? null) ? $endroid['message'] : [];
 
         foreach ($messages as $message) {
-            $this->io->write('<'.$message['type'].'>'.$message['content'].'</>');
+            $this->io->write('<' . $message['type'] . '>' . $message['content'] . '</>');
         }
     }
 }
